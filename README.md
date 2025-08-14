@@ -1,49 +1,178 @@
 # CST8919 – DevOps Security and Compliance
 
-## Assignment 2 – Cloud Service Alternatives Report
-
-**Due:** Week 15 (August 15, 2025) – Submit GitHub repository link via Brightspace by 11:59 PM  
-**Weight:** 10% of Final Grade  
-**Type:** Individual Assignment  
-
----
+# Cloud Security & Compliance Service Comparison
 
 ## Objective
-In this course, we have worked extensively with Microsoft Azure services to implement security, compliance, and DevSecOps practices. The goal of this assignment is to **broaden your cloud knowledge** by researching and identifying **equivalent services** in **Amazon Web Services (AWS)** and **Google Cloud Platform (GCP)** for each Azure service we studied. You will then **compare** these services in terms of features, security/compliance capabilities, and pricing.
 
-You will present your findings in **Markdown format** within a **GitHub repository** to simulate real-world documentation practices.
+This document compares the **Microsoft Azure** security and compliance services used in the "Security and Compliance" course with their **Amazon Web Services (AWS)** and **Google Cloud Platform (GCP)** equivalents.  
+It includes a high-level comparison table and a detailed breakdown of features, security/compliance capabilities, pricing, and integration with DevSecOps practices.
 
 ---
 
-## Instructions
+## Quick Comparison Table
 
-### 1. Identify Azure Services Used in the Course
-Review your labs, quizzes, and assignments from the course to create a list of Azure services we used.  
-At a minimum, your report must include:
+| Azure Service | AWS Equivalent | GCP Equivalent |
+|---------------|---------------|----------------|
+| Azure Active Directory (SSO, IAM) | AWS IAM & AWS SSO | Cloud Identity & IAM |
+| Azure Monitor & Log Analytics | Amazon CloudWatch | Google Cloud Operations Suite (formerly Stackdriver) |
+| Azure Policy | AWS Organizations & AWS Config | Google Cloud Organization Policy Service |
+| Defender for Cloud | AWS Security Hub | Security Command Center |
+| Azure Sentinel (SIEM/SOAR) | Amazon Security Lake & Amazon GuardDuty (partial SIEM) | Chronicle Security Operations |
 
-- Azure Active Directory (SSO, IAM)  
-- Azure Monitor & Log Analytics  
-- Azure Policy  
-- Defender for Cloud
-- Azure Sentinel (SIEM/SOAR)
+---
 
-### 2. Find the AWS & GCP Equivalents
-For each Azure service above:
+## Detailed Comparisons
 
-- Identify the **closest AWS equivalent service**  
-- Identify the **closest GCP equivalent service**
+### 1. Azure Active Directory (SSO, IAM)
 
-### 3. Compare the Services
-For each service, include:
+**Overview**  
+- **Azure AD**: Cloud-based identity and access management, enabling SSO, MFA, and conditional access.
 
-- **Overview** – short description of each service  
-- **Core Features** – key capabilities and functions  
-- **Security & Compliance** – relevant certifications and compliance standards  
-- **Pricing Model** – general cost considerations  
-- **Integration for DevSecOps** – compatibility with automation, CI/CD, and monitoring tools  
+**AWS Equivalent – IAM & AWS SSO**  
+- IAM manages users, roles, and permissions.  
+- AWS SSO provides SSO across AWS accounts and third-party applications.
 
-### 4. Organize in Markdown
-- Create a `README.md` file in your GitHub repository containing your report  
-- Use **headings**, **tables**, and **bullet points** for readability  
-- Include a **comparison table** for quick reference, followed by **narrative analysis**
+**GCP Equivalent – Cloud Identity & IAM**  
+- Cloud Identity handles user lifecycle, SSO, and MFA.  
+- GCP IAM controls permissions at resource and project levels.
 
+**Core Features**
+- **Azure AD**: Enterprise app SSO, conditional access policies, hybrid identity.  
+- **AWS**: Fine-grained permissions, federated access, integrated SSO.  
+- **GCP**: Context-aware access, unified identity for GCP and Google Workspace.
+
+**Security & Compliance**
+- Azure AD: ISO 27001, SOC, FedRAMP, HIPAA.  
+- AWS IAM/SSO: SOC, ISO 27001, FedRAMP.  
+- GCP: ISO 27001, FedRAMP, HIPAA, GDPR.
+
+**Pricing Model**
+- Azure AD: Free tier + Premium P1/P2 licensing.  
+- AWS IAM: No additional cost; SSO based on user/month pricing.  
+- GCP Cloud Identity: Free & Premium editions.
+
+**Integration for DevSecOps**
+- All integrate with CI/CD pipelines, automation scripts, and security tools.
+
+---
+
+### 2. Azure Monitor & Log Analytics
+
+**Overview**  
+- **Azure Monitor**: Metrics & logs for applications and infrastructure.  
+- **Log Analytics**: Advanced querying and visualization for logs.
+
+**AWS Equivalent – Amazon CloudWatch**  
+- Metrics, logs, events, alarms, and dashboards for AWS resources.
+
+**GCP Equivalent – Cloud Operations Suite**  
+- Includes Monitoring, Logging, Trace, Error Reporting, and Profiling.
+
+**Core Features**
+- Azure: Kusto Query Language (KQL), cross-resource analytics.  
+- AWS: Metrics filters, anomaly detection, composite alarms.  
+- GCP: Integration with BigQuery, log-based metrics, custom dashboards.
+
+**Security & Compliance**
+- All major certifications: ISO, SOC, HIPAA, FedRAMP.
+
+**Pricing Model**
+- Based on data ingestion, retention, and API calls.
+
+**Integration for DevSecOps**
+- All integrate with automation tools like Terraform, CI/CD workflows.
+
+---
+
+### 3. Azure Policy
+
+**Overview**  
+- **Azure Policy**: Enforce organization-specific rules for resource configurations.
+
+**AWS Equivalent – AWS Organizations & AWS Config**  
+- AWS Organizations manages accounts, policies, and service control policies.  
+- AWS Config enforces compliance and monitors configuration changes.
+
+**GCP Equivalent – Organization Policy Service**  
+- Defines and enforces constraints across projects/folders.
+
+**Core Features**
+- Azure: Initiative definitions, compliance dashboard.  
+- AWS: SCPs, config rules, drift detection.  
+- GCP: Resource constraints, centralized policy management.
+
+**Security & Compliance**
+- All support compliance standards like PCI-DSS, HIPAA, ISO.
+
+**Pricing Model**
+- Azure Policy: Free, charges may apply for remediation tasks.  
+- AWS Config: Pay per configuration item.  
+- GCP: Included in platform usage.
+
+**Integration for DevSecOps**
+- All support automated compliance checks in CI/CD.
+
+---
+
+### 4. Defender for Cloud
+
+**Overview**  
+- **Defender for Cloud**: Unified security management and threat protection.
+
+**AWS Equivalent – AWS Security Hub**  
+- Centralized view of security alerts and compliance status.
+
+**GCP Equivalent – Security Command Center**  
+- Asset discovery, vulnerability scanning, threat detection.
+
+**Core Features**
+- Azure: Threat protection, regulatory compliance dashboard.  
+- AWS: Aggregates findings from GuardDuty, Inspector, Macie.  
+- GCP: Tiered security services (Standard & Premium).
+
+**Security & Compliance**
+- All integrate with compliance frameworks (CIS, NIST, PCI-DSS).
+
+**Pricing Model**
+- Defender for Cloud: Tier-based per resource type.  
+- AWS Security Hub: Per finding ingested.  
+- GCP SCC: Premium tier per asset scanned.
+
+**Integration for DevSecOps**
+- All integrate with alerting, automation, and security orchestration.
+
+---
+
+### 5. Azure Sentinel (SIEM/SOAR)
+
+**Overview**  
+- **Azure Sentinel**: Cloud-native SIEM with SOAR capabilities.
+
+**AWS Equivalent – Amazon Security Lake & GuardDuty**  
+- Security Lake centralizes security data; GuardDuty detects threats (partial SIEM functionality).
+
+**GCP Equivalent – Chronicle Security Operations**  
+- SIEM and SOAR platform for log ingestion, correlation, and threat hunting.
+
+**Core Features**
+- Azure: AI-driven threat detection, playbooks with Logic Apps.  
+- AWS: Central log storage, anomaly detection, partner integrations.  
+- GCP: Threat intelligence, detection rules, integrated automation.
+
+**Security & Compliance**
+- Meets global security standards; integrates with compliance tooling.
+
+**Pricing Model**
+- Azure Sentinel: Pay-as-you-go per GB ingested.  
+- AWS: Storage and query costs for Security Lake, GuardDuty per event.  
+- GCP Chronicle: Subscription or usage-based.
+
+**Integration for DevSecOps**
+- Supports automated incident response, pipeline security alerts.
+
+---
+
+## Summary
+
+All three cloud providers offer equivalent services for identity management, monitoring, policy enforcement, security posture management, and SIEM/SOAR capabilities. While features overlap significantly, differences emerge in **pricing models**, **native integrations**, and **tooling maturity**.  
+Choosing between them often comes down to existing ecosystem investments and specific compliance requirements.
